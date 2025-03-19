@@ -1,32 +1,46 @@
-// pages/api/team/index.ts
+// group-app\src\pages\api\team\index.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { connectToDatabase } from '../../../lib/mongodb';
+import { getContainer } from '../../../lib/cosmos';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const collectionName = process.env.COLLECTION_NAME || 'defaultCollection';
-
-  try {
-    // Call the function to obtain both client and db
-    const { db } = await connectToDatabase();
-    const collection = db.collection(collectionName);
-
-    if (req.method === 'GET') {
-      // Fetch all team members
-      const teamMembers = await collection.find({}).toArray();
-      return res.status(200).json(teamMembers);
-    } else if (req.method === 'POST') {
-      // Add a new team member
-      const { name, age } = req.body;
-      if (!name || !age) {
-        return res.status(400).json({ error: 'Name and age are required.' });
-      }
-      const result = await collection.insertOne({ name, age });
-      return res.status(201).json({ _id: result.insertedId, name, age });
-    } else {
-      res.setHeader('Allow', ['GET', 'POST']);
-      return res.status(405).end(`Method ${req.method} Not Allowed`);
-    }
-  } catch (error: any) {
-    return res.status(500).json({ error: error.message });
+  // Get client IP for partitioning
+  const ipResponse = await fetch("https://api.ipify.org?format=json");
+  const { ip: clientIp } = await ipResponse.json();
+  
+  // Get the container
+  const container = getContainer();
+  
+  if (req.method === 'GET') {
+    // Query for all team members with this IP as the partition key
+    const querySpec = {
+      query: "SELECT * FROM c WHERE c.ipAddress = @ipAddress",
+      parameters: [
+        {
+          name: "@ipAddress",
+          value: clientIp
+        }
+      ]
+    };
+    
+    const { resources: teamMembers } = await container.items.query(querySpec).fetchAll();
+    return res.status(200).json(teamMembers);
+  } 
+  else if (req.method === 'POST') {
+    const { name, age } = req.body;
+    
+    // Create a document for the team member
+    const newMember = {
+      id: Date.now().toString(), // Use timestamp as ID
+      ipAddress: clientIp,       // Use IP as partition key
+      name,
+      age,
+    };
+    
+    const { resource: createdMember } = await container.items.create(newMember);
+    return res.status(201).json(createdMember);
+  } 
+  else {
+    res.setHeader('Allow', ['GET', 'POST']);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }

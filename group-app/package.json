@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@azure/cosmos": "^4.3.0",
     "lightningcss": "^1.29.2",
     "mongodb": "^6.14.2",
     "next": "15.2.2",
