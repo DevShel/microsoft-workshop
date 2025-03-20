@@ -20,6 +20,8 @@ export default function Home() {
     loadTeamMembers();
   }, []);
 
+  // INSERT GET RANDOM ANIMAL HERE
+
   // Function to load team members
   async function loadTeamMembers() {
     setLoading(true);
