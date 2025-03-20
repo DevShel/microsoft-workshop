@@ -38,7 +38,7 @@ export default function Home() {
     if (!teamMemberName.trim() || !teamMemberAge.trim()) return;
     
     setLoading(true);
-    
+    const animal = await getRandomAnimal();
     const res = await fetch('/api/team', {
       method: 'POST',
       headers: {
@@ -107,7 +107,7 @@ export default function Home() {
           </button>
         </div>
           
-        {/* INSERT animal_button.html */}
+        {/* INSERT new_button.html */}
         
         <div className="mt-8">
           <div className="flex justify-between items-center mb-4">
@@ -130,8 +130,9 @@ export default function Home() {
               {teamMembers.map(m => (
                 <li key={m.id} className="p-3 border-b border-gray-200 flex justify-between items-center">
                   <div>
-                    <span className="font-medium text-gray-700">{m.name}</span> (Age: {m.age})
-                  </div>
+    <span className="font-medium text-gray-700">{m.name}</span> (Age: {m.age})
+    {m.animal && <span className="ml-2 text-blue-500">• {m.animal}</span>}
+</div>
                   <button
                     className="text-red-500 hover:underline"
                     onClick={() => deleteTeamMember(m.id)}
