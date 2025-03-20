@@ -46,8 +46,8 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/DevShel/microsoft-workshop.git
+   cd microsoft-workshop/group-app
    ```
 
 2. **Install Dependencies:**
