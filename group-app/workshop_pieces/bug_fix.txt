@@ -1,0 +1,15 @@
+I'm trying to add a feature to my Next.js application that assigns a random animal to each team member. I'm using this API: https://random-animal-api.vercel.app/api/random-animal
+
+But I'm having a problem - when I add a new team member, no animal name is showing up. Here's my code for fetching the random animal:
+
+```javascript
+async function getRandomAnimal() {
+  try {
+    const res = await fetch('https://random-animal-api.vercel.app/api/random-animal');
+    const data = await res.json();
+    return data.name; // I'm trying to get the animal name here
+  } catch (error) {
+    console.error('Failed to fetch random animal', error);
+    return 'Unknown Animal';
+  }
+}

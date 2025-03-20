@@ -1,4 +1,4 @@
-// group-app\src\lib\cosmos-simplified.ts
+// group-app\src\lib\cosmos.ts
 
 import { CosmosClient } from "@azure/cosmos";
 
