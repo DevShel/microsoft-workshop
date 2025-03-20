@@ -18,7 +18,7 @@ The event specifically connects with underrepresented groups in STEAM, including
 
 ## Workshop Overview
 
-Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop at BMSD. As the Executive Director of Hack4Impact-UMD, I created this workshop to provide a full-stack development experience that is both accessible and engaging. Students work in groups using Microsoft laptops that connect to pre-configured Windows 11 Azure VMs. Each VM runs an instance of our web application, built with Next.js, React, and integrated with a shared Azure Cosmos DB instance (using the MongoDB API) for the backend.
+Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop at BMSD. As the Executive Director of Hack4Impact-UMD, I created this workshop to provide a full-stack development experience that is both accessible and engaging. Students work in groups using Microsoft laptops that connect to pre-configured Windows 11 Azure VMs. Each VM runs an instance of our web application, built with Next.js, React, Next.JS API Middleware, and Azure Cosmosc NoSQL DB for the backend.
 
 ### Purpose
 
@@ -30,7 +30,7 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
 
 - **Azure VMs:** 40 Windows 11 containers, each pre-configured with the necessary tools (VSCode, NPM, etc.) and a standardized Next.js setup.
 - **Frontend:** A simple React web application created with Next.js, utilizing API routes for backend interaction.
-- **Backend:** Azure Cosmos DB (using the MongoDB API) that hosts a shared database. Each group works with a unique table/collection, defined via an environment variable.
+- **Backend:** Azure Cosmos NoSQL DB that hosts a shared database. Each group works with a unique table/collection, defined via an environment variable.
 - **Deployment:** The infrastructure allows for quick duplication of environments, ensuring all student groups have access to the same full-stack development setup.
 
 ## Functionality
@@ -59,9 +59,10 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
 
    Create a `.env` file in the root directory with the following keys:
    ```env
-   MONGODB_URI=your-mongodb-connection-string
-   DB_NAME=yourDatabaseName
-   COLLECTION_NAME=uniqueCollectionNameForThisInstance
+      COSMOS_ENDPOINT=INSERT
+      COSMOS_KEY=INSERT
+      DB_NAME=INSERT
+      COLLECTION_NAME=INSERT
    ```
 
 4. **Start the Development Server:**
