@@ -1,12 +1,17 @@
-// Function to fetch a random animal
 async function getRandomAnimal() {
-    try {
-      const res = await fetch('https://random-animal-api.vercel.app/api/random-animal');
-      const data = await res.json();
-      return data.name; // BUG: This should be data.animal, not data.name
-    } catch (error) {
-      console.error('Failed to fetch random animal', error);
-      return 'Unknown Animal';
-    }
-  }
+  setAnimalLoading(true);
   
+  try {
+    const res = await fetch('https://random-animal-api.vercel.app/api/random-animal');
+    const data = await res.json();
+    const animal = data.animal;
+    setCurrentAnimal(animal);
+    setAnimalLoading(false);
+    return animal;
+  } catch (error) {
+    console.error('Failed to fetch random animal', error);
+    setCurrentAnimal('Unknown Animal');
+    setAnimalLoading(false);
+    return 'Unknown Animal';
+  }
+}

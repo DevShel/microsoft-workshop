@@ -1,15 +1,41 @@
+## Context
+
 I'm trying to add a feature to my Next.js application that assigns a random animal to each team member. I'm using this API: https://random-animal-api.vercel.app/api/random-animal
 
 But I'm having a problem - when I add a new team member, no animal name is showing up. Here's my code for fetching the random animal:
 
-```javascript
+
+## Here is my function for getting a random animal
+
 async function getRandomAnimal() {
+  setAnimalLoading(true);
+  
   try {
     const res = await fetch('https://random-animal-api.vercel.app/api/random-animal');
     const data = await res.json();
-    return data.name; // I'm trying to get the animal name here
+    const animal = data.animal;
+    setCurrentAnimal(animal);
+    setAnimalLoading(false);
+    return animal;
   } catch (error) {
     console.error('Failed to fetch random animal', error);
+    setCurrentAnimal('Unknown Animal');
+    setAnimalLoading(false);
     return 'Unknown Animal';
   }
 }
+
+## Here is a sample response that my API is returning
+
+{"city":"Lion"}
+
+## Here is another sample response my API is returning
+
+{"city":"Marmot"}
+
+# My task for you
+
+I need you to help me modify my code to solve my bug. 
+Also, I know for certain my API is functional and returning examples like I showed above.
+
+

@@ -1,0 +1,21 @@
+<div>
+  <div className="flex items-center justify-between">
+    <label className="block text-lg font-medium text-gray-700 mb-1">Random Animal:</label>
+    <button
+      className={`px-3 py-1 rounded text-sm ${
+        animalLoading 
+          ? 'bg-gray-300 text-gray-500' 
+          : 'bg-green-500 hover:bg-green-600 text-white'
+      }`}
+      onClick={getRandomAnimal}
+      disabled={animalLoading || loading}
+    >
+      {animalLoading ? 'Loading...' : 'Get Random Animal'}
+    </button>
+  </div>
+  {currentAnimal && (
+    <div className="mt-1 p-2 bg-blue-50 border border-blue-100 rounded">
+      <span className="font-medium text-blue-700">{currentAnimal}</span>
+    </div>
+  )}
+</div>
