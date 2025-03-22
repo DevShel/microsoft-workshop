@@ -1,10 +1,14 @@
-# Follow Along With The Slides
+# Context
+
+This project was specifically built for the BMSD workshop. As Co-Executive Director at Hack4Impact-UMD, they ask me to build this workshop. It provides a hands-on opportunity for students to experience full-stack development with modern technologies in a controlled, standardized environment.
+
+# Follow Along With The Slides — "Software Development in the Age of AI"
 
 This workshop was administered using [this slide deck](https://docs.google.com/presentation/d/1i411kl-3xVSfNLtZqIhWnhERsHeoETHpdGRYhkIJfgc/edit?usp=sharing). Make sure to follow along with it starting at slide 10 — "Hands-on Development"!
 
 # Hack4Impact-UMD Minority Student Day Workshop
 
-This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to bridge the digital divide and empower underrepresented students in STEAM fields. The application is meant to run on a Windows 11 machine.
+This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to teach underrepresented students in STEAM fields the role of AI in modern software development. The application is meant to run on a Windows 11 machine.
 
 ## About BMSD
 
@@ -32,19 +36,18 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
 
 ## Infrastructure
 
-- **Azure VMs:** 40 Windows 11 containers, each pre-configured with the necessary tools (VSCode, NPM, etc.) and a standardized Next.js setup.
-- **Frontend:** A simple React web application created with Next.js, utilizing API routes for backend interaction.
-- **Backend:** Azure Cosmos NoSQL DB that hosts a shared database. Each group works with a unique table/collection, defined via an environment variable.
-- **Deployment:** The infrastructure allows for quick duplication of environments, ensuring all student groups have access to the same full-stack development setup.
+- **Frontend:** A simple React web application created with Next.js, utilizing Next.js API middleware for backend interaction.
+- **Backend:** Azure Cosmos NoSQL DB that hosts a shared database. Each group works with a unique partition based on their ipAddress, using partition key "/ipAddress".
 
 ## Functionality
 
 - **Team Registration:** Students can enter team member names and ages via a simple web form.
-- **Data Handling:** The application supports basic CRUD operations:
+- **Data Handling:** The application supports basic operations:
   - **View:** List current team members
   - **Add:** Insert a new team member into the database
   - **Delete:** Remove a team member from the database
 - **Extensibility:** The design is modular, making it easy to add new fields or functionality as the workshop progresses.
+- **Progression:** The students practice building multiple features into their tool as well as troubleshoot errors, all with the help of AI.
 
 ## How to Run Locally
 
@@ -86,6 +89,7 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
 
    The application will run on `http://localhost:3000`.
 
-## Final Notes
 
-This project is specifically tailored for our BMSD workshop. It provides a hands-on opportunity for students to experience full-stack development with modern technologies in a controlled, standardized environment. We hope this workshop inspires and empowers the next generation of STEAM leaders.
+# Final Thoughts
+
+Building this project was very rewarding and I am happy with how it all turned out. I hope this helps inspire the next generation of STEAM students!
