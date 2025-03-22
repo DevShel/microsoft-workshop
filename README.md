@@ -61,18 +61,18 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
   - Setup Azure CosmosDB, partitioned by /ipAddress
   - Create database (DB_NAM) and container (COLLECTION_NAME)
    
-3. **Clone the Repository:**
+2. **Clone the Repository:**
    ```bash
    git clone https://github.com/DevShel/microsoft-workshop.git
    cd microsoft-workshop/group-app
    ```
 
-4. **Install Dependencies:**
+3. **Install Dependencies:**
    ```bash
    npm install
    ```
 
-5. **Configure Environment Variables:**
+4. **Configure Environment Variables:**
 
    Create a `.env` file in the group-app directory with the following keys:
    ```env
@@ -82,7 +82,7 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
       COLLECTION_NAME=INSERT
    ```
 
-6. **Start the Development Server:**
+5. **Start the Development Server:**
    ```bash
    npm run dev
    ```
