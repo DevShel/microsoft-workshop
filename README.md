@@ -1,3 +1,7 @@
+# Follow Along With The Slides
+
+This workshop was administered using (this slide deck)[https://docs.google.com/presentation/d/1i411kl-3xVSfNLtZqIhWnhERsHeoETHpdGRYhkIJfgc/edit?usp=sharing]. Make sure to follow along with it starting at slide 10 — "Hands-on Development"!
+
 # Hack4Impact-UMD Minority Student Day Workshop
 
 This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to bridge the digital divide and empower underrepresented students in STEAM fields. The application is meant to run on a Windows 11 machine and was deployed across ~40 Azure VM containers to provide a standardized development environment for each group.
