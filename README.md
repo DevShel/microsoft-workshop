@@ -1,10 +1,10 @@
 # Follow Along With The Slides
 
-This workshop was administered using (this slide deck)[https://docs.google.com/presentation/d/1i411kl-3xVSfNLtZqIhWnhERsHeoETHpdGRYhkIJfgc/edit?usp=sharing]. Make sure to follow along with it starting at slide 10 — "Hands-on Development"!
+This workshop was administered using [this slide deck](https://docs.google.com/presentation/d/1i411kl-3xVSfNLtZqIhWnhERsHeoETHpdGRYhkIJfgc/edit?usp=sharing). Make sure to follow along with it starting at slide 10 — "Hands-on Development"!
 
 # Hack4Impact-UMD Minority Student Day Workshop
 
-This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to bridge the digital divide and empower underrepresented students in STEAM fields. The application is meant to run on a Windows 11 machine and was deployed across ~40 Azure VM containers to provide a standardized development environment for each group.
+This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to bridge the digital divide and empower underrepresented students in STEAM fields. The application is meant to run on a Windows 11 machine.
 
 ## About BMSD
 
@@ -27,7 +27,7 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
 ### Purpose
 
 - **Full-Stack Experience:** Demonstrate real-world web development by having students interact with both the frontend (React/Next.js) and the backend (API routes interacting with Azure Cosmos DB).
-- **Standardization:** Each student group gets a consistent environment, thanks to containerized Windows 11 VMs.
+- **Standardization:** Each student group gets a consistent environment with the correct installed packages.
 - **Collaboration:** Enable teamwork as students build, test, and deploy web applications using modern Microsoft technologies.
 
 ## Infrastructure
@@ -48,20 +48,30 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
 
 ## How to Run Locally
 
-1. **Clone the Repository:**
+**Technical Requirements:**
+- Node.js v22.14.0 (LTS)
+- Git (make sure to check yes when prompted to "install special C/C++ packages to help with Python development")
+
+``Note: If you are using something other than Windows 11, the text in the form fields may gray/harder to read``
+
+1. **Setup Azure Infrastructure**
+  - Setup Azure CosmosDB, partitioned by /ipAddress
+  - Create database (DB_NAM) and container (COLLECTION_NAME)
+   
+3. **Clone the Repository:**
    ```bash
    git clone https://github.com/DevShel/microsoft-workshop.git
    cd microsoft-workshop/group-app
    ```
 
-2. **Install Dependencies:**
+4. **Install Dependencies:**
    ```bash
    npm install
    ```
 
-3. **Configure Environment Variables:**
+5. **Configure Environment Variables:**
 
-   Create a `.env` file in the root directory with the following keys:
+   Create a `.env` file in the group-app directory with the following keys:
    ```env
       COSMOS_ENDPOINT=INSERT
       COSMOS_KEY=INSERT
@@ -69,7 +79,7 @@ Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop 
       COLLECTION_NAME=INSERT
    ```
 
-4. **Start the Development Server:**
+6. **Start the Development Server:**
    ```bash
    npm run dev
    ```
