@@ -1,6 +1,6 @@
 # Hack4Impact-UMD Minority Student Day Workshop
 
-This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to teach underrepresented students in STEAM fields the role of AI in modern software development. This web application is meant to run on a Windows 11 machine.
+This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to teach students the role of AI in modern software development. This web application is meant to run on a Windows 11 machine.
 
 ## Follow Along With The Slides — "Software Development in the Age of AI"
 
