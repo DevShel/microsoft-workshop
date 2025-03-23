@@ -1,7 +1,3 @@
-# Context
-
-This project was specifically built for the BMSD workshop. As Co-Executive Director at Hack4Impact-UMD, they ask me to build this workshop. It provides a hands-on opportunity for students to experience full-stack development with modern technologies in a controlled, standardized environment.
-
 # Follow Along With The Slides — "Software Development in the Age of AI"
 
 This workshop was administered using [this slide deck](https://docs.google.com/presentation/d/1i411kl-3xVSfNLtZqIhWnhERsHeoETHpdGRYhkIJfgc/edit?usp=sharing). Make sure to follow along with it starting at slide 10 — "Hands-on Development"!
