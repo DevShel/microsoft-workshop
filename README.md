@@ -1,19 +1,19 @@
-# Follow Along With The Slides — "Software Development in the Age of AI"
+# Hack4Impact-UMD Minority Student Day Workshop
+
+This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to teach underrepresented students in STEAM fields the role of AI in modern software development. This web application is meant to run on a Windows 11 machine.
+
+## Follow Along With The Slides — "Software Development in the Age of AI"
 
 This workshop was administered using [this slide deck](https://docs.google.com/presentation/d/1i411kl-3xVSfNLtZqIhWnhERsHeoETHpdGRYhkIJfgc/edit?usp=sharing). Make sure to follow along with it starting at slide 10 — "Hands-on Development"!
 
-# Hack4Impact-UMD Minority Student Day Workshop
-
-This repository contains a simple web application designed for the Blacks at Microsoft Minority Student Day (BMSD) workshop. This workshop was created to teach underrepresented students in STEAM fields the role of AI in modern software development. The application is meant to run on a Windows 11 machine.
-
 ## About BMSD
 
-**BMSD (Blacks at Microsoft Minority Student Day)** is a STEAM (Science, Technology, Engineering, Arts, Mathematics) event aimed at:
+**BMSD (Blacks at Microsoft Minority Student Day)** is an all-day event that brings over 100 high school students from local schools to Microsoft's Arlington, Virginia office. Some goals of the event include:
 - Introducing high school students to STEAM careers
 - Empowering them through Microsoft technologies
 - Enhancing their career readiness in collaboration with Microsoft employees
 
-The event specifically connects with underrepresented groups in STEAM, including Black, Hispanic/Latinx, and female students. Beyond building technical skills, BMSD emphasizes teamwork, mental well-being, and professional soft skills through:
+The event specifically connects with underrepresented groups in STEAM, including Black, Hispanic/Latinx, and female students. Beyond building technical skills, BMSD emphasizes teamwork and professional soft skills through:
 - Engaging workshops
 - Networking opportunities
 - Hands-on activities
@@ -22,7 +22,7 @@ The event specifically connects with underrepresented groups in STEAM, including
 
 ## Workshop Overview
 
-Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop at BMSD. As the Executive Director of Hack4Impact-UMD, I created this workshop to provide a full-stack development experience that is both accessible and engaging. Students work in groups using Microsoft laptops that connect to pre-configured Windows 11 Azure VMs. Each VM runs an instance of our web application, built with Next.js, React, Next.JS API Middleware, and Azure Cosmosc NoSQL DB for the backend.
+Our nonprofit organization, Hack4Impact-UMD, was asked to administer a Workshop at BMSD. As the Executive Director of Hack4Impact-UMD, I created this workshop to provide a full-stack development experience that is both informative and engaging. Students work in groups using Microsoft laptops that connect to pre-configured Windows 11 Azure VMs. Each VM runs an instance of our web application, built with Next.js, React, Next.JS API Middleware, and Azure Cosmosc NoSQL DB for the backend.
 
 ### Purpose
 
