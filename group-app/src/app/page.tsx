@@ -20,7 +20,7 @@ export default function Home() {
     loadTeamMembers();
   }, []);
 
-  // INSERT GET RANDOM ANIMAL HERE
+  // INSERT getRandomAnimal() HERE
 
   // Function to load team members
   async function loadTeamMembers() {
@@ -86,6 +86,7 @@ export default function Home() {
               disabled={loading}
             />
           </div>
+          
           <div>
             <label className="block text-lg font-medium text-gray-700 mb-1">Age:</label>
             <input
@@ -96,6 +97,9 @@ export default function Home() {
               disabled={loading}
             />
           </div>
+
+          {/* INSERT new_button.html */}
+
           <button
             className={`w-full text-white font-semibold py-2 rounded ${
               loading ? 'bg-gray-400' : 'bg-blue-500 hover:bg-blue-600'
@@ -106,8 +110,7 @@ export default function Home() {
             {loading ? 'Processing...' : 'Add Member'}
           </button>
         </div>
-          
-        {/* INSERT animal_button.html */}
+        
         
         <div className="mt-8">
           <div className="flex justify-between items-center mb-4">

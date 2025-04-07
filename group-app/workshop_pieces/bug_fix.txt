@@ -5,7 +5,7 @@ I'm trying to add a feature to my Next.js application that assigns a random anim
 But I'm having a problem - when I add a new team member, no animal name is showing up. Here's my code for fetching the random animal:
 
 
-## Here is my function for getting a random animal
+## Here is my function for getting a random animal, which is located in my file "page.tsx"
 
 async function getRandomAnimal() {
   setAnimalLoading(true);
